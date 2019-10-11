@@ -5,23 +5,28 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>java--数据库操作 | Hexo</title>
+  <link rel="dns-prefetch" href="http://1391382616.github.io">
+  <title>java--数据库操作 | Poison</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据库系统是由数据库、数据库管理系统（DBMS）和应用系统、数据库管理员构成的。数据库的主要特点：  实现数据共享 减少数据的冗余度 数据的独立性 数据实现集中控制 数据的一致性和可维护性，以确保数据的安全性和可靠性  数据库的基本结构分为：物理数据层、概念数据层、逻辑数据层。数据库系统一般基于某种数据模型，可以分为层次型、网状型、关系型及面向对象型 SQL（Structure Query Lan">
+  <meta name="description" content="数据库系统是由数据库、数据库管理系统（DBMS）和应用系统、数据库管理员构成的。数据库的主要特点：  实现数据共享 减少数据的冗余度 数据的独立性 数据实现集中控制 数据的一致性和可维护性，以确保数据的安全性和可靠性">
 <meta name="keywords" content="java,DB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java--数据库操作">
-<meta property="og:url" content="http://yoursite.com/2019/10/10/java-数据库操作/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="数据库系统是由数据库、数据库管理系统（DBMS）和应用系统、数据库管理员构成的。数据库的主要特点：  实现数据共享 减少数据的冗余度 数据的独立性 数据实现集中控制 数据的一致性和可维护性，以确保数据的安全性和可靠性  数据库的基本结构分为：物理数据层、概念数据层、逻辑数据层。数据库系统一般基于某种数据模型，可以分为层次型、网状型、关系型及面向对象型 SQL（Structure Query Lan">
+<meta property="og:url" content="http://1391382616.github.io/2019/10/10/java-数据库操作/index.html">
+<meta property="og:site_name" content="Poison">
+<meta property="og:description" content="数据库系统是由数据库、数据库管理系统（DBMS）和应用系统、数据库管理员构成的。数据库的主要特点：  实现数据共享 减少数据的冗余度 数据的独立性 数据实现集中控制 数据的一致性和可维护性，以确保数据的安全性和可靠性">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-10T09:01:28.041Z">
+<meta property="og:image" content="http://1391382616.github.io/2019/10/10/java-数据库操作/Connection接口.jpg">
+<meta property="og:image" content="http://1391382616.github.io/2019/10/10/java-数据库操作/Statement接口.jpg">
+<meta property="og:image" content="http://1391382616.github.io/2019/10/10/java-数据库操作/DriverManager类.jpg">
+<meta property="og:image" content="http://1391382616.github.io/2019/10/10/java-数据库操作/ResultSet接口.jpg">
+<meta property="og:updated_time" content="2019-10-11T03:42:33.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java--数据库操作">
-<meta name="twitter:description" content="数据库系统是由数据库、数据库管理系统（DBMS）和应用系统、数据库管理员构成的。数据库的主要特点：  实现数据共享 减少数据的冗余度 数据的独立性 数据实现集中控制 数据的一致性和可维护性，以确保数据的安全性和可靠性  数据库的基本结构分为：物理数据层、概念数据层、逻辑数据层。数据库系统一般基于某种数据模型，可以分为层次型、网状型、关系型及面向对象型 SQL（Structure Query Lan">
+<meta name="twitter:description" content="数据库系统是由数据库、数据库管理系统（DBMS）和应用系统、数据库管理员构成的。数据库的主要特点：  实现数据共享 减少数据的冗余度 数据的独立性 数据实现集中控制 数据的一致性和可维护性，以确保数据的安全性和可靠性">
+<meta name="twitter:image" content="http://1391382616.github.io/2019/10/10/java-数据库操作/Connection接口.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Poison" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -177,12 +182,20 @@
 <li>减少数据的冗余度</li>
 <li>数据的独立性</li>
 <li>数据实现集中控制</li>
-<li>数据的一致性和可维护性，以确保数据的安全性和可靠性</li>
+<li>数据的一致性和可维护性，以确保数据的安全性和可靠性<a id="more"></a>
+数据库的基本结构分为：物理数据层、概念数据层、逻辑数据层。数据库系统一般基于某种数据模型，可以分为层次型、网状型、关系型及面向对象型</li>
 </ol>
-<p>数据库的基本结构分为：物理数据层、概念数据层、逻辑数据层。数据库系统一般基于某种数据模型，可以分为层次型、网状型、关系型及面向对象型</p>
 <p><strong>SQL</strong>（Structure Query Language）结构化查询语言，由数据定义语言（DDL）、数据操纵语言（DML）、数据控制语言（DCL）、事务控制语言组成。</p>
-<p>JDBC是一种可用于执行SQL语句的Java API。其主要作用为：与数据库建立一个连接，向数据库发送SQL语句，处理从数据库返回的结果。</p>
+<p>JDBC是一种可用于执行SQL语句的Java API。其主要作用为：与数据库建立一个连接，向数据库发送SQL语句，处理从数据库返回的结果。常用的JDBC接口和类在java.sql包中<br><strong>Connection接口</strong>代表与特定的数据库的连接，在上下文中执行SQL语句并返回结果</p>
+<img src="/2019/10/10/java-数据库操作/Connection接口.jpg" title="Connection接口常用方法">
+<p><strong>Statement接口</strong>用于在已经建立连接基础上向数据库发送SQL语句。三种对象：Statement对象用于执行不带参数的简单SQL，PreparedStatement继承Statement用来执行动态SQL语句，CallableStatement继承PreparedStatement用于执行对数据库的存储过程的调用。</p>
+<img src="/2019/10/10/java-数据库操作/Statement接口.jpg" title="Statement接口常用方法">
+<p><strong>PreparedStatement接口</strong>用来动态执行SQL语句，通过PreparedStatement实例执行的动态SQL语句将被编译并保存到PreparedStatement实例中，从而可以反复地执行该SQL语句。</p>
 
+<p><strong>DriverManager类</strong>用来管理数据库中的所有驱动程序</p>
+<img src="/2019/10/10/java-数据库操作/DriverManager类.jpg" title="DriverManager类常用方法">
+<p><strong>ResultSet接口</strong>用来暂存数据库查询操作所获得的结果集。</p>
+<img src="/2019/10/10/java-数据库操作/ResultSet接口.jpg" title="ResultSet接口常用方法">
       
 
       
@@ -276,7 +289,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/10/java-数据库操作/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://1391382616.github.io/2019/10/10/java-数据库操作/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -291,8 +304,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2019/10/09/article-title/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">第一篇</div>
+    <a href="/2019/10/09/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
       <i class="icon-circle-right"></i>
     </a>
   
