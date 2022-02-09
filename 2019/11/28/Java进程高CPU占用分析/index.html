@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://1391382616.github.io">
-  <title>Tag: java | Poison</title>
+  <title>Java进程高CPU占用分析 | Poison</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Java,Python,DB,ABAP">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Poison">
-<meta property="og:url" content="http://1391382616.github.io/tags/java/index.html">
+  <meta name="description" content="使用top命令查看当前进程，找到占用CPU高的进程其PID 12345678910111213141516171819202122232425Tasks: 314 total,   1 running, 313 sleeping,   0 stopped,   0 zombieCpu(s):  2.5%us,  0.0%sy,  0.0%ni, 97.5%id,  0.0%wa,  0.0%hi,">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java进程高CPU占用分析">
+<meta property="og:url" content="http://1391382616.github.io/2019/11/28/Java进程高CPU占用分析/index.html">
 <meta property="og:site_name" content="Poison">
+<meta property="og:description" content="使用top命令查看当前进程，找到占用CPU高的进程其PID 12345678910111213141516171819202122232425Tasks: 314 total,   1 running, 313 sleeping,   0 stopped,   0 zombieCpu(s):  2.5%us,  0.0%sy,  0.0%ni, 97.5%id,  0.0%wa,  0.0%hi,">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-29T05:06:46.610Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Poison">
+<meta name="twitter:title" content="Java进程高CPU占用分析">
+<meta name="twitter:description" content="使用top命令查看当前进程，找到占用CPU高的进程其PID 12345678910111213141516171819202122232425Tasks: 314 total,   1 running, 313 sleeping,   0 stopped,   0 zombieCpu(s):  2.5%us,  0.0%sy,  0.0%ni, 97.5%id,  0.0%wa,  0.0%hi,">
   
     <link rel="alternative" href="/atom.xml" title="Poison" type="application/atom+xml">
   
@@ -155,148 +159,183 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java进程高CPU占用分析" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+		<center><p>
+  
+    <h1 class="article-title_code_ant" itemprop="name">
+      Java进程高CPU占用分析
+    </h1>
+  
+</p></center>
+        
+        <a href="/2019/11/28/Java进程高CPU占用分析/" class="archive-article-date">
+  	<time datetime="2019-11-28T05:07:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-28</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用<code>top</code>命令查看当前进程，找到占用CPU高的进程其PID</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Tasks: 314 total,   1 running, 313 sleeping,   0 stopped,   0 zombie</span><br><span class="line">Cpu(s):  2.5%us,  0.0%sy,  0.0%ni, 97.5%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st</span><br><span class="line">Mem:  132036160k total, 19289020k used, 112747140k free,   277328k buffers</span><br><span class="line">Swap: 20479996k total,        0k used, 20479996k free, 11187544k cached</span><br><span class="line"></span><br><span class="line">  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                                     </span><br><span class="line">  785 root      20   0 17.7g 6.5g  16m S 39.5  5.2 194:23.33 java                                                         </span><br><span class="line">    1 root      20   0 19420 2352 2028 S  0.0  0.0   0:01.42 init                                                         </span><br><span class="line">    2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthreadd                                                     </span><br><span class="line">    3 root      20   0     0    0    0 S  0.0  0.0   0:00.37 ksoftirqd/0                                                  </span><br><span class="line">    5 root       0 -20     0    0    0 S  0.0  0.0   0:00.00 kworker/0:0H                                                 </span><br><span class="line">    7 root      20   0     0    0    0 S  0.0  0.0   2:03.33 rcu_sched                                                    </span><br><span class="line">    8 root      20   0     0    0    0 S  0.0  0.0   0:00.00 rcu_bh                                                       </span><br><span class="line">    9 root      20   0     0    0    0 S  0.0  0.0   0:53.13 rcuos/0                                                      </span><br><span class="line">   10 root      20   0     0    0    0 S  0.0  0.0   0:00.00 rcuob/0                                                      </span><br><span class="line">   11 root      RT   0     0    0    0 S  0.0  0.0   0:00.02 migration/0                                                  </span><br><span class="line">   12 root      RT   0     0    0    0 S  0.0  0.0   0:01.85 watchdog/0                                                   </span><br><span class="line">   13 root      RT   0     0    0    0 S  0.0  0.0   0:01.41 watchdog/1                                                   </span><br><span class="line">   14 root      RT   0     0    0    0 S  0.0  0.0   0:00.02 migration/1                                                  </span><br><span class="line">   15 root      20   0     0    0    0 S  0.0  0.0   0:00.07 ksoftirqd/1                                                  </span><br><span class="line">   16 root      20   0     0    0    0 S  0.0  0.0   0:03.16 kworker/1:0                                                  </span><br><span class="line">   17 root       0 -20     0    0    0 S  0.0  0.0   0:00.00 kworker/1:0H                                                 </span><br><span class="line">   18 root      20   0     0    0    0 S  0.0  0.0   0:02.65 rcuos/1                                                      </span><br><span class="line">   19 root      20   0     0    0    0 S  0.0  0.0   0:00.00 rcuob/1                                                      </span><br><span class="line">   20 root      RT   0     0    0    0 S  0.0  0.0   0:01.44 watchdog/2</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>top -Hp 785</code>查看具体的线程，找到占用CPU高的线程PID</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Tasks: 266 total,   0 running, 266 sleeping,   0 stopped,   0 zombie</span><br><span class="line">Cpu(s):  3.0%us,  0.1%sy,  0.0%ni, 96.9%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st</span><br><span class="line">Mem:  132036160k total, 19289072k used, 112747088k free,   277328k buffers</span><br><span class="line">Swap: 20479996k total,        0k used, 20479996k free, 11187844k cached</span><br><span class="line"></span><br><span class="line">  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                                     </span><br><span class="line">  817 root      20   0 17.7g 6.5g  16m S 35.6  5.2  36:12.74 java                                                         </span><br><span class="line">24348 root      20   0 17.7g 6.5g  16m S 10.4  5.2   0:28.08 java                                                         </span><br><span class="line">25978 root      20   0 17.7g 6.5g  16m S  0.6  5.2   0:33.79 java                                                         </span><br><span class="line">29697 root      20   0 17.7g 6.5g  16m S  0.6  5.2   0:13.10 java                                                         </span><br><span class="line"> 1286 root      20   0 17.7g 6.5g  16m S  0.6  5.2   0:04.74 java                                                         </span><br><span class="line"> 3750 root      20   0 17.7g 6.5g  16m S  0.6  5.2   0:04.17 java                                                         </span><br><span class="line"> 4888 root      20   0 17.7g 6.5g  16m S  0.6  5.2   0:12.39 java                                                         </span><br><span class="line">  785 root      20   0 17.7g 6.5g  16m S  0.0  5.2   0:00.00 java                                                         </span><br><span class="line">  786 root      20   0 17.7g 6.5g  16m S  0.0  5.2   0:01.04 java                                                         </span><br><span class="line">  787 root      20   0 17.7g 6.5g  16m S  0.0  5.2   0:52.22 java                                                         </span><br><span class="line">  788 root      20   0 17.7g 6.5g  16m S  0.0  5.2   0:51.26 java                                                         </span><br><span class="line">  789 root      20   0 17.7g 6.5g  16m S  0.0  5.2   0:53.50 java                                                         </span><br><span class="line">  790 root      20   0 17.7g 6.5g  16m S  0.0  5.2   0:53.39 java                                                         </span><br><span class="line">  793 root      20   0 17.7g 6.5g  16m S  0.0  5.2   0:52.08 java                                                         </span><br><span class="line">  794 root      20   0 17.7g 6.5g  16m S  0.0  5.2   0:51.80 java                                                         </span><br><span class="line">  795 root      20   0 17.7g 6.5g  16m S  0.0  5.2   0:53.62 java                                                         </span><br><span class="line">  796 root      20   0 17.7g 6.5g  16m S  0.0  5.2   0:51.71 java                                                         </span><br><span class="line">  797 root      20   0 17.7g 6.5g  16m S  0.0  5.2   0:52.11 java</span><br></pre></td></tr></table></figure>
+
+<p>使用命令<code>printf &quot;%x\n&quot; 817</code> 将其转换为16进制</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@SAPP ~]<span class="comment"># printf "%x\n" 817</span></span><br><span class="line">331</span><br></pre></td></tr></table></figure>
+
+<p>使用jastack分析线程<br>命令<code>jstack 785 | grep 331 -A100</code><br>得到</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"active%0053essions%0043ache.data"</span> prio=10 tid=0x00007fccb0afa800 nid=0x331 waiting on condition [0x00007fcd0707f000]</span><br><span class="line">   java.lang.Thread.State: TIMED_WAITING (parking)</span><br><span class="line">	at sun.misc.Unsafe.park(Native Method)</span><br><span class="line">	- parking to <span class="built_in">wait</span> <span class="keyword">for</span>  &lt;0x000000060d421660&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer<span class="variable">$ConditionObject</span>)</span><br><span class="line">	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)</span><br><span class="line">	at java.util.concurrent.locks.AbstractQueuedSynchronizer<span class="variable">$ConditionObject</span>.awaitNanos(AbstractQueuedSynchronizer.java:2082)</span><br><span class="line">	at java.util.concurrent.ScheduledThreadPoolExecutor<span class="variable">$DelayedWorkQueue</span>.take(ScheduledThreadPoolExecutor.java:1090)</span><br><span class="line">	at java.util.concurrent.ScheduledThreadPoolExecutor<span class="variable">$DelayedWorkQueue</span>.take(ScheduledThreadPoolExecutor.java:807)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor<span class="variable">$Worker</span>.run(ThreadPoolExecutor.java:615)</span><br><span class="line">	at java.lang.Thread.run(Thread.java:745)</span><br><span class="line"></span><br><span class="line"><span class="string">"page%0043aching%0046ilter.data"</span> prio=10 tid=0x00007fccb0af4800 nid=0x330 waiting on condition [0x00007fcd07180000]</span><br><span class="line">   java.lang.Thread.State: TIMED_WAITING (parking)</span><br><span class="line">	at sun.misc.Unsafe.park(Native Method)</span><br><span class="line">	- parking to <span class="built_in">wait</span> <span class="keyword">for</span>  &lt;0x000000060d442840&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer<span class="variable">$ConditionObject</span>)</span><br><span class="line">	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)</span><br><span class="line">	at java.util.concurrent.locks.AbstractQueuedSynchronizer<span class="variable">$ConditionObject</span>.awaitNanos(AbstractQueuedSynchronizer.java:2082)</span><br><span class="line">	at java.util.concurrent.ScheduledThreadPoolExecutor<span class="variable">$DelayedWorkQueue</span>.take(ScheduledThreadPoolExecutor.java:1090)</span><br><span class="line">	at java.util.concurrent.ScheduledThreadPoolExecutor<span class="variable">$DelayedWorkQueue</span>.take(ScheduledThreadPoolExecutor.java:807)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor<span class="variable">$Worker</span>.run(ThreadPoolExecutor.java:615)</span><br><span class="line">	at java.lang.Thread.run(Thread.java:745)</span><br><span class="line"></span><br><span class="line"><span class="string">"corp%0043ache.data"</span> prio=10 tid=0x00007fccb0aec000 nid=0x32f waiting on condition [0x00007fcd07281000]</span><br><span class="line">   java.lang.Thread.State: TIMED_WAITING (parking)</span><br><span class="line">	at sun.misc.Unsafe.park(Native Method)</span><br><span class="line">	- parking to <span class="built_in">wait</span> <span class="keyword">for</span>  &lt;0x000000060d431920&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer<span class="variable">$ConditionObject</span>)</span><br><span class="line">	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)</span><br><span class="line">	at java.util.concurrent.locks.AbstractQueuedSynchronizer<span class="variable">$ConditionObject</span>.awaitNanos(AbstractQueuedSynchronizer.java:2082)</span><br><span class="line">	at java.util.concurrent.ScheduledThreadPoolExecutor<span class="variable">$DelayedWorkQueue</span>.take(ScheduledThreadPoolExecutor.java:1090)</span><br><span class="line">	at java.util.concurrent.ScheduledThreadPoolExecutor<span class="variable">$DelayedWorkQueue</span>.take(ScheduledThreadPoolExecutor.java:807)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor<span class="variable">$Worker</span>.run(ThreadPoolExecutor.java:615)</span><br><span class="line">	at java.lang.Thread.run(Thread.java:745)</span><br><span class="line"></span><br><span class="line"><span class="string">"user%0043ache.data"</span> prio=10 tid=0x00007fccb0aee800 nid=0x32e waiting on condition [0x00007fcd07382000]</span><br><span class="line">   java.lang.Thread.State: TIMED_WAITING (parking)</span><br><span class="line">	at sun.misc.Unsafe.park(Native Method)</span><br><span class="line">	- parking to <span class="built_in">wait</span> <span class="keyword">for</span>  &lt;0x000000060d4003e8&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer<span class="variable">$ConditionObject</span>)</span><br><span class="line">	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)</span><br><span class="line">	at java.util.concurrent.locks.AbstractQueuedSynchronizer<span class="variable">$ConditionObject</span>.awaitNanos(AbstractQueuedSynchronizer.java:2082)</span><br><span class="line">	at java.util.concurrent.ScheduledThreadPoolExecutor<span class="variable">$DelayedWorkQueue</span>.take(ScheduledThreadPoolExecutor.java:1090)</span><br><span class="line">	at java.util.concurrent.ScheduledThreadPoolExecutor<span class="variable">$DelayedWorkQueue</span>.take(ScheduledThreadPoolExecutor.java:807)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor<span class="variable">$Worker</span>.run(ThreadPoolExecutor.java:615)</span><br><span class="line">	at java.lang.Thread.run(Thread.java:745)</span><br><span class="line"></span><br><span class="line"><span class="string">"defaultCache"</span> daemon prio=10 tid=0x00007fccb0ade800 nid=0x32d <span class="keyword">in</span> Object.wait() [0x00007fcd07483000]</span><br><span class="line">   java.lang.Thread.State: WAITING (on object monitor)</span><br><span class="line">	at java.lang.Object.wait(Native Method)</span><br><span class="line">	- waiting on &lt;0x000000060d44c088&gt; (a java.util.TaskQueue)</span><br><span class="line">	at java.lang.Object.wait(Object.java:503)</span><br><span class="line">	at java.util.TimerThread.mainLoop(Timer.java:526)</span><br><span class="line">	- locked &lt;0x000000060d44c088&gt; (a java.util.TaskQueue)</span><br><span class="line">	at java.util.TimerThread.run(Timer.java:505)</span><br><span class="line"></span><br><span class="line"><span class="string">"GC Daemon"</span> daemon prio=10 tid=0x00007fcd3c455800 nid=0x32a <span class="keyword">in</span> Object.wait() [0x00007fcd0c13c000]</span><br><span class="line">   java.lang.Thread.State: TIMED_WAITING (on object monitor)</span><br><span class="line">	at java.lang.Object.wait(Native Method)</span><br><span class="line">	- waiting on &lt;0x000000060c1f5600&gt; (a sun.misc.GC<span class="variable">$LatencyLock</span>)</span><br><span class="line">	at sun.misc.GC<span class="variable">$Daemon</span>.run(GC.java:117)</span><br><span class="line">	- locked &lt;0x000000060c1f5600&gt; (a sun.misc.GC<span class="variable">$LatencyLock</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">"Service Thread"</span> daemon prio=10 tid=0x00007fcd3c0ac800 nid=0x328 runnable [0x0000000000000000]</span><br><span class="line">   java.lang.Thread.State: RUNNABLE</span><br><span class="line"></span><br><span class="line"><span class="string">"C2 CompilerThread1"</span> daemon prio=10 tid=0x00007fcd3c0aa000 nid=0x327 waiting on condition [0x0000000000000000]</span><br><span class="line">   java.lang.Thread.State: RUNNABLE</span><br><span class="line"></span><br><span class="line"><span class="string">"C2 CompilerThread0"</span> daemon prio=10 tid=0x00007fcd3c0a7000 nid=0x326 waiting on condition [0x0000000000000000]</span><br><span class="line">   java.lang.Thread.State: RUNNABLE</span><br><span class="line"></span><br><span class="line"><span class="string">"Signal Dispatcher"</span> daemon prio=10 tid=0x00007fcd3c0a4800 nid=0x325 runnable [0x0000000000000000]</span><br><span class="line">   java.lang.Thread.State: RUNNABLE</span><br><span class="line"></span><br><span class="line"><span class="string">"Finalizer"</span> daemon prio=10 tid=0x00007fcd3c084000 nid=0x324 <span class="keyword">in</span> Object.wait() [0x00007fcd0d0c8000]</span><br><span class="line">   java.lang.Thread.State: WAITING (on object monitor)</span><br><span class="line">	at java.lang.Object.wait(Native Method)</span><br><span class="line">	- waiting on &lt;0x000000060c1ef180&gt; (a java.lang.ref.ReferenceQueue<span class="variable">$Lock</span>)</span><br><span class="line">	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:135)</span><br><span class="line">	- locked &lt;0x000000060c1ef180&gt; (a java.lang.ref.ReferenceQueue<span class="variable">$Lock</span>)</span><br><span class="line">	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:151)</span><br><span class="line">	at java.lang.ref.Finalizer<span class="variable">$FinalizerThread</span>.run(Finalizer.java:209)</span><br><span class="line"></span><br><span class="line"><span class="string">"Reference Handler"</span> daemon prio=10 tid=0x00007fcd3c082000 nid=0x323 <span class="keyword">in</span> Object.wait() [0x00007fcd0d1c9000]</span><br><span class="line">   java.lang.Thread.State: WAITING (on object monitor)</span><br><span class="line">	at java.lang.Object.wait(Native Method)</span><br><span class="line">	- waiting on &lt;0x000000060c1eebb0&gt; (a java.lang.ref.Reference<span class="variable">$Lock</span>)</span><br><span class="line">	at java.lang.Object.wait(Object.java:503)</span><br><span class="line">	at java.lang.ref.Reference<span class="variable">$ReferenceHandler</span>.run(Reference.java:133)</span><br><span class="line">	- locked &lt;0x000000060c1eebb0&gt; (a java.lang.ref.Reference<span class="variable">$Lock</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">"main"</span> prio=10 tid=0x00007fcd3c009000 nid=0x312 runnable [0x00007fcd43ca0000]</span><br><span class="line">   java.lang.Thread.State: RUNNABLE</span><br><span class="line">	at java.net.PlainSocketImpl.socketAccept(Native Method)</span><br><span class="line">	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:398)</span><br></pre></td></tr></table></figure>
+
+<p>或<code>jstack 785 &gt; 785</code>直接导出文本<br>死锁， Deadlock（重点关注）<br>执行中，Runnable<br>等待资源， Waiting on condition（重点关注）<br>等待获取监视器， Waiting on monitor entry（重点关注）<br>暂停，Suspended<br>对象等待中，Object.wait() 或 TIMED_WAITING<br>阻塞， Blocked（重点关注）<br>停止，Parked<br><code>jmap -heap 785</code> 查询当前heap的使用情况<br><code>jmap -dump:format=b,file=./dump1.file 785</code>生成堆转储快照dump文件<br><code>jmap -dump:live,format=b,file=./dump1.file 785</code>存活对象生成堆转储快照dump文件</p>
+
+      
+		
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/16/SpringBoot注解/" class="archive-article-date">
-  	<time datetime="2019-11-16T05:20:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/16/SpringBoot注解/">SpringBoot注解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://1391382616.github.io/2019/11/28/Java进程高CPU占用分析/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/17/Spring整体架构/" class="archive-article-date">
-  	<time datetime="2019-10-17T08:33:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/16/SpringBoot注解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpringBoot注解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/17/Spring整体架构/">Spring整体架构</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/10/java-数据库操作/" class="archive-article-date">
-  	<time datetime="2019-10-10T07:51:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/10/java-数据库操作/">java--数据库操作</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DB</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -319,9 +358,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

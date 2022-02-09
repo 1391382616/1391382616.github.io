@@ -6,16 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://1391382616.github.io">
-  <title>Tag: java | Poison</title>
+  <title>Spring整体架构 | Poison</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Java,Python,DB,ABAP">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Poison">
-<meta property="og:url" content="http://1391382616.github.io/tags/java/index.html">
+  <meta name="description" content="Spring框架是一个分层架构，包含一系列的功能要素，分为大约20个模块">
+<meta name="keywords" content="java,Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring整体架构">
+<meta property="og:url" content="http://1391382616.github.io/2019/10/17/Spring整体架构/index.html">
 <meta property="og:site_name" content="Poison">
+<meta property="og:description" content="Spring框架是一个分层架构，包含一系列的功能要素，分为大约20个模块">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://1391382616.github.io/2019/10/17/Spring整体架构/Spring.jpg">
+<meta property="og:updated_time" content="2019-10-17T08:59:51.322Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Poison">
+<meta name="twitter:title" content="Spring整体架构">
+<meta name="twitter:description" content="Spring框架是一个分层架构，包含一系列的功能要素，分为大约20个模块">
+<meta name="twitter:image" content="http://1391382616.github.io/2019/10/17/Spring整体架构/Spring.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Poison" type="application/atom+xml">
   
@@ -155,78 +161,75 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Spring整体架构" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/16/SpringBoot注解/" class="archive-article-date">
-  	<time datetime="2019-11-16T05:20:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
+		<center><p>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/16/SpringBoot注解/">SpringBoot注解</a>
+    <h1 class="article-title_code_ant" itemprop="name">
+      Spring整体架构
     </h1>
   
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/17/Spring整体架构/" class="archive-article-date">
+</p></center>
+        
+        <a href="/2019/10/17/Spring整体架构/" class="archive-article-date">
   	<time datetime="2019-10-17T08:33:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/17/Spring整体架构/">Spring整体架构</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Spring框架是一个分层架构，包含一系列的功能要素，分为大约20个模块</p>
+<img src="/2019/10/17/Spring整体架构/Spring.jpg" title="Spring整体架构图">
+<a id="more"></a>
+<ol>
+<li>Core Container（核心容器）<br>包含Core、Beans、Context 和Expression Language 模块，Core和Beans模块是框架的基础部分，提供IoC（转控制）和依赖注入特性。BeanFactory提供对Factory 模式的经典实现来消除对程序’性单例模式的需要，并真正地允许你从程序逻辑中分离出依赖关系和配置。<ul>
+<li>Core 模决主要包含Spring 框架基本的核心工具类,Spring 的其他纽件都要用到这个包里的类，Core 模块是其他纽件的基本核心。</li>
+<li>Beans 模块是所有应用都妥用到的，它包含访问配直文件、创建和管理bean以及进行Inversion of Control / Dependency Injection (IoC/DI）操作相关的所有类。</li>
+<li>Context 模块构建于Core和Beans模块基础之上，提供了一种类似于JNDI注册器的框架式的对象访问方法。Context 模块继承了Beans 的特性，为Spring核心提供了大量扩展，添加了对国际化（例如资源绑定）、事件传播、资源加载和对Context的透明创建的支持。ApplicationContext接口是Context模块的关键。</li>
+</ul>
+</li>
+<li>Data Access/Integration<br>包含而BC 、ORM 、OXM、几础和Transaction 模块。<ul>
+<li>JDBC 模块提供了一个JDBC 抽象层，它可以消除冗长的JDBC 编码和解析数据库厂商特有的错误代码。</li>
+<li>ORM 模块为流行的对象－关系映射API，利用ORM 封装包，可以混合使用所有Spring 提供的特性进行O/R 映射。</li>
+</ul>
+</li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
+      
+		
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -242,61 +245,115 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://1391382616.github.io/2019/10/17/Spring整体架构/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/10/java-数据库操作/" class="archive-article-date">
-  	<time datetime="2019-10-10T07:51:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/11/16/SpringBoot注解/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          SpringBoot注解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/16/oracle死锁问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">oracle死锁问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/10/java-数据库操作/">java--数据库操作</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DB</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -319,9 +376,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

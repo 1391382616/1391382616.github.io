@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://1391382616.github.io">
-  <title>Tag: java | Poison</title>
+  <title>SpringBoot注解 | Poison</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Java,Python,DB,ABAP">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Poison">
-<meta property="og:url" content="http://1391382616.github.io/tags/java/index.html">
+  <meta name="description" content="Spring的核心理念：一个是控制反转（Invsersion of Control,IoC）,另一个是面向切面编程（Aspect Oriented Programming,AOP）。在Spring中把每一个需要管理的对象称为Spring Bean（Bean），而Spring管理这些Bean的容器，被我们称为Spring IoC容器。其具备两个基本的功能：  通过描述管理Bean，包括发布和获取Be">
+<meta name="keywords" content="java,SpringBoot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot注解">
+<meta property="og:url" content="http://1391382616.github.io/2019/11/16/SpringBoot注解/index.html">
 <meta property="og:site_name" content="Poison">
+<meta property="og:description" content="Spring的核心理念：一个是控制反转（Invsersion of Control,IoC）,另一个是面向切面编程（Aspect Oriented Programming,AOP）。在Spring中把每一个需要管理的对象称为Spring Bean（Bean），而Spring管理这些Bean的容器，被我们称为Spring IoC容器。其具备两个基本的功能：  通过描述管理Bean，包括发布和获取Be">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-16T06:49:01.795Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Poison">
+<meta name="twitter:title" content="SpringBoot注解">
+<meta name="twitter:description" content="Spring的核心理念：一个是控制反转（Invsersion of Control,IoC）,另一个是面向切面编程（Aspect Oriented Programming,AOP）。在Spring中把每一个需要管理的对象称为Spring Bean（Bean），而Spring管理这些Bean的容器，被我们称为Spring IoC容器。其具备两个基本的功能：  通过描述管理Bean，包括发布和获取Be">
   
     <link rel="alternative" href="/atom.xml" title="Poison" type="application/atom+xml">
   
@@ -155,36 +159,65 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-SpringBoot注解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/16/SpringBoot注解/" class="archive-article-date">
-  	<time datetime="2019-11-16T05:20:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
+		<center><p>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/16/SpringBoot注解/">SpringBoot注解</a>
+    <h1 class="article-title_code_ant" itemprop="name">
+      SpringBoot注解
     </h1>
   
+</p></center>
+        
+        <a href="/2019/11/16/SpringBoot注解/" class="archive-article-date">
+  	<time datetime="2019-11-16T05:20:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Spring的核心理念：一个是控制反转（Invsersion of Control,IoC）,另一个是面向切面编程（Aspect Oriented Programming,AOP）。<br>在Spring中把每一个需要管理的对象称为Spring Bean（Bean），而Spring管理这些Bean的容器，被我们称为Spring IoC容器。其具备两个基本的功能：</p>
+<ul>
+<li>通过描述管理Bean，包括发布和获取Bean</li>
+<li>通过描述完成Bean之间的依赖关系</li>
+</ul>
+<p>@Configuration 代表这是一个Java配置文件，Spring的容器会根据它来生成IoC容器去装配Bean。<br>@Bean(name = “”) 代表将方法返回的POJO装配到IoC容器中，而其属性name定义这个Bean的名称，如果没有配置，则将方法名称作为Bean的名称保存到Spring IoC容器中。<br>@Component(“”) 表明这个类将被Ioc容器扫描装配,其中配置的参数则是作为Bean的名称，若不配置，则把类名第一个字母作小写其他不变作为Bean名称放入IoC容器中<br>@Value(“”) 指具体的值，使得Spring IoC给与对应得属性注入对应得值。<br>@ComponentScan 扫描类所在的当前包和其子包</p>
 
-        <div class="article-info info-on-right">
-          
+      
+		
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -200,103 +233,115 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://1391382616.github.io/2019/11/16/SpringBoot注解/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/17/Spring整体架构/" class="archive-article-date">
-  	<time datetime="2019-10-17T08:33:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/11/28/Java进程高CPU占用分析/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java进程高CPU占用分析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/17/Spring整体架构/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring整体架构</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/17/Spring整体架构/">Spring整体架构</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/10/java-数据库操作/" class="archive-article-date">
-  	<time datetime="2019-10-10T07:51:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/10/java-数据库操作/">java--数据库操作</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DB</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -319,9 +364,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
